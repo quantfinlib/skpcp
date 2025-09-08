@@ -1,26 +1,126 @@
-[tool.poetry]
+[project]
 name = "skpcp"
 version = "0.0.1"
 description = "Principal component pursuit built on top of scikit-learn"
-authors = ["Mohammadjavad Vakili <mohammadjavad.vakili@gmail.com>"]
+authors = [
+    { name = "Mohammadjavad Vakili", email = "mohammadjavad.vakili@gmail.com"}
+]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.9"
-numpy = "^2.0.0"
-pandas = "^2.2.2"
-matplotlib = "^3.9.0"
-scikit-learn = "^1.5.0"
+requires-python = ">=3.11"
 
 
-[tool.poetry.group.dev]
-optional = true
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.2.2"
-pytest-cov = "^5.0.0"
 
+dependencies = [
+    "numpy", 
+    "scikit-learn",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.8.13,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = true
+
+[tool.uv.build-backend]
+module-name = "skpcp"
+module-root = ""
+
+[project.optional-dependencies]
+
+dev = [
+    "ruff==0.9.10",
+     "pre-commit==4.1.0",
+]
+
+docs = [
+    "sphinx <8.2",
+    "sphinx-book-theme",
+    "sphinx-copybutton",
+    "sphinx-autodoc-typehints",
+    "nbsphinx",
+    "ipython",
+    "matplotlib", 
+    "nbformat==5.4.0",
+    "ipython", 
+    "notebook", 
+   
+]
+
+tests = [
+    "pytest",
+    "pytest-cov",
+    "scipy"
+]
+
+
+[tool.ruff]
+
+[tool.ruff.lint]
+
+# Available rule sets in Ruff:
+# A: flake8-builtins - Check for python builtins being used as variables or parameters
+# B: flake8-bugbear - Find likely bugs and design problems
+# C4: flake8-comprehensions - Helps write better list/set/dict comprehensions
+# D: pydocstyle - Check docstring style
+# E: pycodestyle errors - PEP 8 style guide
+# ERA: eradicate - Find commented out code
+# F: pyflakes - Detect logical errors
+# I: isort - Sort imports
+# N: pep8-naming - Check PEP 8 naming conventions
+# PT: flake8-pytest-style - Check pytest best practices
+# RUF: Ruff-specific rules
+# S: flake8-bandit - Find security issues
+# SIM: flake8-simplify - Simplify code
+# T10: flake8-debugger - Check for debugger imports and calls
+# UP: pyupgrade - Upgrade syntax for newer Python
+# W: pycodestyle warnings - PEP 8 style guide warnings
+# ANN: flake8-annotations - Type annotation checks
+# ARG: flake8-unused-arguments - Unused arguments
+# BLE: flake8-blind-except - Check for blind except statements
+# COM: flake8-commas - Trailing comma enforcement
+# DTZ: flake8-datetimez - Ensure timezone-aware datetime objects
+# EM: flake8-errmsg - Check error message strings
+# FBT: flake8-boolean-trap - Boolean argument checks
+# ICN: flake8-import-conventions - Import convention enforcement
+# ISC: flake8-implicit-str-concat - Implicit string concatenation
+# NPY: NumPy-specific rules
+# PD: pandas-specific rules
+# PGH: pygrep-hooks - Grep-based checks
+# PIE: flake8-pie - Miscellaneous rules
+# PL: Pylint rules
+# Q: flake8-quotes - Quotation style enforcement
+# RSE: flake8-raise - Raise statement checks
+# RET: flake8-return - Return statement checks
+# SLF: flake8-self - Check for self references
+# TCH: flake8-type-checking - Type checking imports
+# TID: flake8-tidy-imports - Import tidying
+# TRY: flake8-try-except-raise - Try/except/raise checks
+# YTT: flake8-2020 - Python 2020+ compatibility
+
+# Selected rule sets to enforce:
+# D: pydocstyle - Check docstring style
+# E: pycodestyle errors - PEP 8 style guide
+# F: pyflakes - Detect logical errors
+# I: isort - Sort imports
+# N: pep8-naming - Check PEP 8 naming conventions
+# W: pycodestyle warnings - PEP 8 style guide warnings
+# UP: pyupgrade - Upgrade syntax for newer Python
+select = ["D", "E", "F", "I", "N", "W", "UP", "PD"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"  # Use NumPy docstring style
+
+[tool.ruff.format]
+# Use double quotes for strings
+quote-style = "double"
+# Use spaces for indentation
+indent-style = "space"
+# Automatically detect and use the appropriate line ending
+line-ending = "auto"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["S101"]                 # Allow assert statements in tests
+"docs/examples/*.ipynb" = ["N803", "S101"] # Allow non-lowercase variable names (N803)
+                                           # and assert statements in notebook files
