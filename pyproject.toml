@@ -1,6 +1,6 @@
 [project]
 name = "skpcp"
-version = "0.0.1"
+version = "0.1.0"
 description = "Principal component pursuit built on top of scikit-learn"
 authors = [
     { name = "Mohammadjavad Vakili", email = "mohammadjavad.vakili@gmail.com"}
