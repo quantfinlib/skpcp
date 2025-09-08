@@ -1,11 +1,12 @@
 ## skpcp
 
 Robust principal component analysis via Principal Component Pursuit (PCP) with scikit-learn transformer interface. 
-
+[![pypi](https://img.shields.io/pypi/v/skpcp.svg)](https://pypi.org/project/skpcp/)
 [![codecov](https://codecov.io/gh/quantfinlib/skpcp/graph/badge.svg?token=ZUZEM2WENL)](https://codecov.io/gh/quantfinlib/skpcp)
 [![Tests](https://github.com/quantfinlib/skpcp/actions/workflows/test.yml/badge.svg)](https://github.com/quantfinlib/skpcp/actions/workflows/test.yml)
 [![Doc Build](https://github.com/quantfinlib/skpcp/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/quantfinlib/skpcp/actions/workflows/docs.yml)
-
+[![python3.11](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### Installation
 
