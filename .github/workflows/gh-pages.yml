@@ -28,7 +28,7 @@ jobs:
 
       - name: Sphinx build
         run: |
-          sphinx-build docs docs/_build
+          uv run sphinx-build docs docs/_build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
