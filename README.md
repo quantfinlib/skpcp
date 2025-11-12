@@ -7,6 +7,7 @@ Robust principal component analysis via Principal Component Pursuit (PCP) with s
 [![Doc Build](https://github.com/quantfinlib/skpcp/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/quantfinlib/skpcp/actions/workflows/docs.yml)
 [![python3.11](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/skpcp?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/skpcp)
 
 ### Installation
 
@@ -67,4 +68,5 @@ then run the following:
 
 ```bash
 sphinx-build docs docs/_build
+
 ```
